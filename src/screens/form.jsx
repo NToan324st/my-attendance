@@ -40,7 +40,7 @@ export default function FormComponent() {
     checkPermissionCamera();
   }, []);
   return (
-    <div className="bg-white p-10 w-1/2 h-fit">
+    <div className="bg-white p-10 w-1/2 min-w-96 h-fit">
       <div className="title border-b pb-10 custom-border-color">
         <h3>Điểm danh sinh viên</h3>
         <p className="text-base">

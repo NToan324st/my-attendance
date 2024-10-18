@@ -18,9 +18,14 @@ export default function FormComponent() {
   useEffect(() => {
     async function checkPermissionCamera() {
       try {
-        await navigator.mediaDevices.getUserMedia({ video: true });
-
-        setCameraPermission(true);
+        const cameraPermission = await navigator.permissions.query({
+          name: "camera",
+        });
+        if (cameraPermission.state === "granted") {
+          setCameraPermission(true);
+        } else {
+          setCameraPermission(false);
+        }
       } catch (error) {
         setCameraPermission(false);
       }

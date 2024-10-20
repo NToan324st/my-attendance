@@ -87,9 +87,9 @@ export default function FormComponent() {
           <Form.ControlLabel>Vị trí</Form.ControlLabel>
           <Location />
         </Form.Group>
-        <Form.Group className="flex justify-center content-center border-t mt-5 p-10 custom-border-color">
-          <ButtonToolbar>
-            {cameraPermission && locationPermission ?
+        <Form.Group className="flex justify-center flex-wrap content-center border-t mt-5 p-10 custom-border-color">
+          {cameraPermission && locationPermission ?
+            <ButtonToolbar>
               <Button
                 appearance=""
                 size="lg"
@@ -102,8 +102,11 @@ export default function FormComponent() {
               >
                 Gửi
               </Button>
-            : <p>Vui lòng cho phép truy cập máy ảnh và vị trí!</p>}
-          </ButtonToolbar>
+            </ButtonToolbar>
+          : <p className="text-center">
+              Vui lòng cho phép truy cập máy ảnh và vị trí!
+            </p>
+          }
         </Form.Group>
       </Form>
     </div>
